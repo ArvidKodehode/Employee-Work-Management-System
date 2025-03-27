@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <!-- Metadata and links -->
+  <meta charset="UTF-8" />
+  <title>NKEY System</title>
+  <link rel="stylesheet" href="/css/style.css?v=1.0.0">
+  <link rel="icon" href="/img/nkey.ico" type="image/x-icon">
+  
+</head>
+<body>
+  <header class="main-header">
+    <div class="header-left">
+      <img src="/img/logo.jpg" alt="Logo" class="logo" />
+    </div>
+    <div class="header-center">
+      <h1 class="site-title">NKEY System</h1>
+    </div>
+    <div class="header-right">
+      <span class="user-label" id="userLabel">Guest</span>
+      <img src="/img/logo.jpg" alt="User" class="user-pic" id="userPic">
+      <a href="logout.php" class="logout-btn" id="logoutBtn" style="display: none;">Log out</a>
+    </div>
+  </header>
+
+  <div class="main-layout">
+    <aside class="sidebar" id="sidebarMenu">
+      <ul>
+        <li><a href="#" onclick="showSection('home')">Home</a></li>
+        <li><a href="stamp.html">Stamp</a></li>
+        <li><a href="#" onclick="openLoginModal()">My Page</a></li>
+        <li><a href="#" onclick="showSection('faq')">FAQ</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <section id="section-home">
+        <h2>Welcome to NKEY</h2>
+        <p>The system is ready to use. Select a function from the menu.</p>
+      </section>
+    
+      <section id="section-faq" style="display: none;">
+        <h2>Frequently Asked Questions</h2>
+        <ul class="faq">
+          <li>
+            <button>How do I log in?</button>
+            <div class="answer">Use your registered employee ID and password. If you have trouble, click “Forgot Password”.</div>
+          </li>
+          <li>
+            <button>How do I reset my password?</button>
+            <div class="answer">Click “Forgot Password” on the login screen and follow the instructions sent to your email.</div>
+          </li>
+          <li>
+            <button>How do I apply for leave?</button>
+            <div class="answer">Go to the “Apply Leave” page, fill out the form, and submit to your manager.</div>
+          </li>
+          <li>
+            <button>Where can I find my timesheet?</button>
+            <div class="answer">Once logged in, open the “Timesheet” section for a full overview of your hours.</div>
+          </li>
+          <li>
+            <button>How do I contact support?</button>
+            <div class="answer">Check the Contact page. If a feature is missing, please reach out to an admin.</div>
+          </li>
+        </ul>
+    
+        <h3>Still have questions?</h3>
+        <form class="other-query-form">
+          <input type="text" placeholder="Your name" required />
+          <input type="tel" placeholder="Phone number" required />
+          <input type="email" placeholder="Email address" required />
+          <textarea placeholder="Your question..." required></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+    
+  </div>
+
+  <footer class="main-footer">
+    <p>&copy; 2025 NKEY AS</p>
+  </footer>
+
+  <!-- Modal login popup -->
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal">
+      <button class="modal-close" onclick="closeLoginModal()">&times;</button>
+      <h2>Log in</h2>
+      <form class="manual-form" id="loginForm">
+        <input type="text" id="username" placeholder="Username" required><br>
+        <input type="password" id="password" placeholder="Password" required><br>
+        <button type="submit">Log in</button>
+      </form>
+      <p id="feedback"></p>
+    </div>
+  </div>
+
+  <script>
+    // Open the login modal
+    function openLoginModal() {
+      document.getElementById("loginModal").style.display = "flex";
+    }
+
+    // Close the login modal
+    function closeLoginModal() {
+      document.getElementById("loginModal").style.display = "none";
+    }
+
+    // Handle login form submission
+    document.getElementById("loginForm").addEventListener("submit", async function(e) {
+      e.preventDefault();
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      // Send login data to the server
+      const response = await fetch("check-user.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password })
+      });
+
+      const result = await response.json();
+      const feedback = document.getElementById("feedback");
+
+      if (result.success) {
+        // Save user data to local storage and redirect to dashboard
+        localStorage.setItem("user", JSON.stringify(result.user));
+        feedback.style.color = "limegreen";
+        feedback.textContent = "Login successful!";
+        setTimeout(() => window.location.href = "dashboard.php", 1000);
+      } else {
+        // Display error message
+        feedback.style.color = "red";
+        feedback.textContent = result.message || "Incorrect username or password.";
+      }
+    });
+
+    // Display user information in the header if logged in
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (user) {
+      document.getElementById("userLabel").textContent = user.username;
+      document.getElementById("userPic").src = user.profile_image || "/img/logo.jpg";
+      document.getElementById("logoutBtn").style.display = "inline-block";
+    }
+  </script>
+
+<script>
+  // Show sections
+  function showSection(sectionId) {
+  // Hide all sections
+  document.getElementById("section-home").style.display = "none";
+  document.getElementById("section-faq").style.display = "none";
+
+  // Show selected section
+  document.getElementById("section-" + sectionId).style.display = "block";
+
+  // Enable toggle behavior for FAQ if shown
+  if (sectionId === "faq") {
+    document.querySelectorAll(".faq button").forEach(btn => {
+      btn.onclick = () => btn.classList.toggle("active");
+    });
+  }
+}
+
+</script>
+
+</body>
+</html>

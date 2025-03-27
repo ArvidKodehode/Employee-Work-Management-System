@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="/css/style.css?v=1.0.0">
+  <link rel="icon" href="/img/nkey.ico" type="image/x-icon">
+</head>
+
+<body>
+  <header class="main-header">
+    <div class="header-left">
+      <img src="/img/logo.jpg" alt="Logo" class="logo" />
+    </div>
+    <div class="header-center">
+      <h1 class="site-title">NKEY Admin Panel</h1>
+    </div>
+    <div class="header-right">
+      <span class="user-label" id="userLabel">Guest</span>
+      <img src="/img/logo.jpg" alt="User" class="user-pic" id="userPic">
+      <button onclick="logoutUser()" class="logout-btn">Log out</button>
+    </div>
+  </header>
+
+  <div class="main-layout">
+    <aside class="sidebar" id="sideMenu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="stemple.html">Stamp</a></li>
+        <li><a href="#">My Page</a></li>
+        <li><a href="admin.html">Admin Panel</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <div id="adminContent">
+        <h2>Admin Control</h2>
+        <p>Welcome, <span id="adminName"></span>!</p>
+
+        <!-- Admin functions will be added here -->
+        <button onclick="alert('New user function coming soon!')">+ Add New User</button>
+        <div id="userList"></div>
+      </div>
+
+      <div id="noAccess" style="display: none;">
+        <h2>No Access</h2>
+        <p>You must be an administrator to view this panel.</p>
+      </div>
+    </main>
+  </div>
+
+  <footer class="main-footer">
+    <p>&copy; 2025 NKEY AS</p>
+  </footer>
+
+  <script>
+    // Retrieve user information from local storage
+    const user = JSON.parse(localStorage.getItem("user"));
+
+    // Check if the user is an admin; if not, restrict access
+    if (!user || user.role !== "admin") {
+      document.getElementById("adminContent").style.display = "none";
+      document.getElementById("noAccess").style.display = "block";
+    } else {
+      // Display user information in the admin panel
+      document.getElementById("userLabel").textContent = user.username;
+      document.getElementById("adminName").textContent = user.username;
+      document.getElementById("userPic").src = user.profile_image || "/img/logo.jpg";
+    }
+
+    // Log out the user and redirect to the home page
+    function logoutUser() {
+      localStorage.removeItem("user");
+      location.href = "index.html";
+    }
+  </script>
+<script src="/js/bruker.js"></script>
+</body>
+</html>

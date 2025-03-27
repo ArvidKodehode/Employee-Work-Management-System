@@ -1,0 +1,575 @@
+/* === Reset og base === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* === Header === */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #80d0c7, #13547a);
+    padding: 15px 30px;
+    color: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.logo {
+    height: 50px;
+    border-radius: 10px;
+}
+
+.site-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-pic {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.user-label {
+    font-weight: 500;
+}
+
+/* === Layout === */
+.main-layout {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+}
+
+.sidebar {
+    width: 200px;
+    background: #e1f5fe;
+    padding: 20px;
+    border-right: 2px solid #b3e5fc;
+    box-shadow: inset -1px 0 0 #90caf9;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    margin-bottom: 15px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #1565c0;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.sidebar a:hover {
+    color: #0d47a1;
+}
+
+/* === Main content === */
+.main-content {
+    flex: 1;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 0 0 10px 0;
+}
+
+.main-content h2 {
+    color: #1976d2;
+    margin-bottom: 10px;
+}
+
+/* === Footer === */
+.main-footer {
+    background: #13547a;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+    margin-top: auto;
+    box-shadow: 0 -2px 6px rgba(0,0,0,0.05);
+}
+
+/* === Responsivitet === */
+@media (max-width: 768px) {
+    .main-layout {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 2px solid #b3e5fc;
+    }
+    .main-content {
+        border-radius: 0;
+    }
+}
+/* === Reset og base === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* === Login spesifikk === */
+.stamp-body {
+    background: linear-gradient(120deg, #e0f7fa, #f1f8e9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.stamp-container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+.stamp-container h1 {
+    margin-bottom: 25px;
+    font-size: 2rem;
+    color: #00796b;
+}
+
+.manual-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.manual-form button {
+    width: 100%;
+    padding: 12px;
+    background: #00796b;
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.manual-form button:hover {
+    background: #004d40;
+}
+
+#feedback {
+    margin-top: 15px;
+    font-weight: 500;
+    font-size: 1rem;
+}
+/* === Reset og base === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* === Login spesifikk === */
+.stamp-body {
+    background: linear-gradient(120deg, #e0f7fa, #f1f8e9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.stamp-container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+.stamp-container h1 {
+    margin-bottom: 25px;
+    font-size: 2rem;
+    color: #00796b;
+}
+
+.manual-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.manual-form button {
+    width: 100%;
+    padding: 12px;
+    background: #00796b;
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.manual-form button:hover {
+    background: #004d40;
+}
+
+#feedback {
+    margin-top: 15px;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+/* === Modal Login Popup === */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+}
+
+.modal h2 {
+    margin-bottom: 20px;
+    color: #00796b;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #777;
+}
+
+.modal-close:hover {
+    color: #000;
+}
+.user-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 1rem;
+    font-size: 1rem;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .user-table thead {
+    background-color: #e6f0ff;
+    border-bottom: 2px solid #888;
+  }
+  
+  .user-table th,
+  .user-table td {
+    padding: 12px 16px;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .user-table th:last-child,
+  .user-table td:last-child {
+    border-right: none;
+  }
+  
+  .user-table tr:last-child td {
+    border-bottom: none;
+  }
+  
+  .user-table tbody tr:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .btn-edit,
+  .btn-delete {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  
+  .btn-edit {
+    background-color: #ffe680;
+    color: #333;
+  }
+  
+  .btn-delete {
+    background-color: #ff9999;
+    color: #fff;
+  }
+  .user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 6px rgba(0,0,0,0.1);
+  }
+  
+  .user-table th,
+  .user-table td {
+    padding: 12px 18px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+  }
+  
+  .user-table th {
+    background-color: #f0f8ff;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .user-table tbody tr:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .faq button {
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    font-weight: bold;
+    background-color: #f4f4f4;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  .faq button:hover {
+    background-color: #ddd;
+  }
+  .answer {
+    display: none;
+    padding: 1rem;
+    background-color: #fff;
+    border: 1px solid #ccc;
+  }
+  .faq button.active + .answer {
+    display: block;
+  }
+  .other-query-form input,
+  .other-query-form textarea {
+    width: 100%;
+    margin-top: 10px;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+  }
+  .other-query-form button {
+    padding: 0.8rem 2rem;
+    background: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  /* FAQ Section Styles */
+.faq {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+  }
+  
+  .faq li {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+  }
+  
+  .faq button {
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .faq button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .faq button.active {
+    background-color: #d0d0d0;
+  }
+  
+  .answer {
+    display: none;
+    padding: 1rem;
+    background-color: #fff;
+    border-left: 4px solid #007BFF;
+    margin-top: 5px;
+  }
+  
+  .faq button.active + .answer {
+    display: block;
+  }
+  
+  .other-query-form {
+    margin-top: 30px;
+  }
+  
+  .other-query-form input,
+  .other-query-form textarea {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .other-query-form textarea {
+    height: 100px;
+    resize: vertical;
+  }
+  
+  .other-query-form button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .other-query-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* === My Page (User Profile) === */
+#panel-minside {
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  #panel-minside h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #004080;
+  }
+  
+  #myProfileForm {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  #myProfileForm label {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  #myProfileForm input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  #myProfileForm input[disabled] {
+    background-color: #f5f5f5;
+    color: #777;
+  }
+  
+  #myProfileForm button[type="submit"] {
+    background-color: #007BFF;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    padding: 12px;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #myProfileForm button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  #saveMessage {
+    margin-top: 15px;
+    font-weight: bold;
+  }
+  
