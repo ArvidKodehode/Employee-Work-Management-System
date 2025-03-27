@@ -103,3 +103,56 @@ This project is a dashboard-based time and user management system for employees 
 
 This project is developed by Team GP2 – in collaboration with NKEY AS.
 
+📦 Installation Guide (using XAMPP)
+✅ Step-by-step:
+Download ZIP or clone the repository:
+
+bash
+Kopier
+Rediger
+git clone https://github.com/ArvidKodehode/Employee-Work-Management-System.git
+Move the project folder to your htdocs directory:
+
+Example: C:\xampp\htdocs\Employee-Work-Management-System
+
+Start XAMPP and launch:
+
+✅ Apache
+
+✅ SQLite requires no server setup
+
+Run the app
+Open your browser and visit:
+
+pgsql
+Kopier
+Rediger
+http://localhost/Employee-Work-Management-System/index.html
+✅ You can now use the system locally!
+
+📦 Инструкция по установке (с использованием XAMPP)
+✅ Пошаговая инструкция:
+Скачайте ZIP или клонируйте репозиторий:
+
+bash
+Kopier
+Rediger
+git clone https://github.com/ArvidKodehode/Employee-Work-Management-System.git
+Переместите папку проекта в каталог htdocs:
+
+Пример: C:\xampp\htdocs\Employee-Work-Management-System
+
+Запустите XAMPP и включите:
+
+✅ Apache
+
+✅ SQLite не требует настройки сервера
+
+Откройте приложение
+Введите в браузере:
+
+pgsql
+Kopier
+Rediger
+http://localhost/Employee-Work-Management-System/index.html
+✅ Система готова к использованию локально!
