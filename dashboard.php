@@ -25,7 +25,7 @@
     <aside class="sidebar" id="sidebarMenu">
       <ul id="menuList">
         <li><a href="#" onclick="visPanel('panel-home')">🏠 Home</a></li>
-        <li><a href="#" onclick="visPanel('panel-stemple')">⏱ Clock In/Out</a></li>
+        <li><a href="#" onclick="visPanel('panel-vacation')">🏖 Vacation</a></li>
         <li><a href="#" onclick="visPanel('panel-minside')">👤 My Page</a></li>
         <li><a href="#" onclick="visPanel('panel-my-timesheet'); loadUserTimesheet()">📅 My Timesheet</a></li>
         <li><a href="#" onclick="visPanel('panel-faq')">📖 FAQ</a></li>
@@ -51,6 +51,13 @@
     <button onclick="changeUserMonth(1)">Next ➡️</button>
   </div>
   <div id="userTimesheetTable"></div>
+</div>
+
+<div id="panel-vacation" class="panel" style="display:none">
+  <h2>Vacation Request</h2>
+  <div id="vacationContent">
+    <p>Loading vacation panel...</p>
+  </div>
 </div>
 
 
@@ -162,5 +169,7 @@
   <script src="js/auth.js"></script>
   <script src="js/bruker.js"></script>
   <script src="js/timesheet.js"></script>
+  <script src="js/vacation.js"></script>
+
 </body>
 </html>
